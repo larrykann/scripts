@@ -1,5 +1,3 @@
--- env_loader.lua
-
 local M = {}
 
 function M.loadEnv(path)
