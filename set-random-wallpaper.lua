@@ -1,7 +1,14 @@
 #!/usr/bin/env lua
 
 -- Path to your wallpapers directory
-local wallpapersPath = os.getenv("WALLPAPER_PATH")
+local envLoader = require("env_loader")
+local env = envLoader.loadEnv("./.env")
+
+local wallpapersPath = env["WALLPAPER_PATH"]
+if not wallpapersPath then
+    print("Error: WALLPAPER_PATH is not set.")
+    os.exit(1)
+end
 
 -- Function to get files from a directory
 function getFilesFromDir(directory)
