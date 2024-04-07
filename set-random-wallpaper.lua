@@ -1,7 +1,7 @@
 #!/usr/bin/env lua
 
 -- Path to your wallpapers directory
-local wallpapersPath = "/home/atariaf/Pictures/Wallpapers"
+local wallpapersPath = os.getenv("WALLPAPER_PATH")
 
 -- Function to get files from a directory
 function getFilesFromDir(directory)
