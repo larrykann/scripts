@@ -40,7 +40,7 @@
 #     deletion of files or directories.
 
 # Load environment variables from .env file
-export $(grep -v '^#' .env | xargs)
+export $(grep -v '^#' /home/atariaf/Projects/Scripts/.env | xargs)
 
 # Directories and files to exclude
 exclusions=("Libraries" "data" "storage" "lean.json")
