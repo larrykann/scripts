@@ -55,7 +55,7 @@ function isExcluded {
 function copyLibraries {
     local targetDir=$1
     [[ -d "$targetDir/Libraries" ]] && rm -rf "$targetDir/Libraries"
-    cp -r "$LEAN_LIBRARIES_PATH" "$targetDir"
+    rsync -av --exclude='.git' "$LEAN_LIBRARIES_PATH/" "$targetDir/Libraries/"
 }
 
 # Main logic
